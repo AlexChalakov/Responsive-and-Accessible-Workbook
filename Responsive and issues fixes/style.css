@@ -1,0 +1,522 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+
+/*Menu bar style*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    outline: none;
+}
+
+input {
+    outline: none;
+}
+
+/* Clears, forcing a new row */
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* This adds a gutter to the grid */
+[class*="col-"] {
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/* Media query for mobile: */
+@media only screen and (max-width: 425px) {
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.3fr 0.6fr 0.6fr 0.4fr;
+        grid-template-areas: 
+            "logo"
+            "menu-bar"
+            "campus"
+            "facts"
+            "news"
+        ;
+        grid-row-gap: 1rem;
+    }
+
+    #header{
+        display: none;
+    }
+
+    #logo{
+        grid-area: logo;
+        justify-self: center;
+        width: 70px;
+    }
+
+    #menu-bar{
+        grid-area: menu-bar;
+    }
+
+    ul{
+        padding-top: 10px;
+        justify-self: center;
+        overflow:visible;
+        background-color: #FFFFFF;
+    }
+
+    li a{
+        color: #0000FF;
+        font-size: 12px;
+        text-decoration: underline;
+        padding-right: 15px;
+        padding-left: 15px;
+        border-right: 3px solid #333;
+    }
+
+    li:last-child a{
+        border-right: none;
+    }
+
+    #campus{
+        grid-area: campus;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #campus > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0.1em;
+    }
+
+    #campus > p{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #facts{
+        grid-area: facts;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+    
+    #facts > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0.1em;
+    }
+
+    #facts > p{
+        margin-block-start: 0em;
+        margin-block-end: 0.8em;
+    }
+
+    #news{
+        grid-area: news;
+        border:#333 1px solid;
+        padding: 0.2em;
+        padding-bottom: 0.5em;
+    }
+
+    #news > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #news > h2{
+        margin-block-start: 0.5em;
+        margin-block-end: 0em;
+    }
+
+    #news > p{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+}
+
+/* Media query for tablet: */
+/*768 px*/
+@media only screen and (max-width: 1023px) and (min-width:426px) {
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 0.1fr 0.9fr;
+        grid-template-rows: 0.2fr 0.6fr 0.6fr 0.4fr;
+        grid-template-areas: 
+            "logo menu-bar"
+            "campus campus"
+            "facts facts"
+            "news news"
+        ;
+        grid-row-gap: 1rem;
+    }
+
+    #header{
+        display: none;
+    }
+
+    #logo{
+        grid-area: logo;
+        justify-self: center;
+        width: 70px;
+    }
+
+    #menu-bar{
+        grid-area: menu-bar;
+    }
+
+    ul{
+        padding-top: 15px;
+        justify-self: center;
+        overflow:visible;
+        background-color: #FFFFFF;
+    }
+
+    li a{
+        color: #0000FF;
+        font-size: 12px;
+        text-decoration: underline;
+        padding-right: 40px;
+        padding-left: 40px;
+        border-right: 3px solid #333;
+    }
+
+    li:last-child a{
+        border-right: none;
+    }
+
+    #campus{
+        grid-area: campus;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #campus > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0.1em;
+    }
+
+    #campus > p{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #campus > img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    #facts{
+        grid-area: facts;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+    
+    #facts > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0.1em;
+    }
+
+    #facts > p{
+        margin-block-start: 0em;
+        margin-block-end: 0.0em;
+    }
+
+    #news{
+        grid-area: news;
+        border:#333 1px solid;
+        padding: 0.2em;
+        padding-bottom: 0.5em;
+    }
+
+    #news > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #news > h2{
+        margin-block-start: 0.5em;
+        margin-block-end: 0em;
+    }
+
+    #news > p{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+}
+
+/* Media query for laptop: */
+@media only screen and (min-width: 1024px) {
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns:0.4fr 0.5fr 0.15fr;
+        grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+        grid-template-areas: 
+            "header header logo"
+            "menu-bar menu-bar menu-bar"
+            "campus facts facts"
+            "news news news"
+        ;
+        grid-column-gap: 2rem;
+        grid-row-gap: 1rem;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    #header{
+        grid-area: header;
+        border:#333 1px solid;
+        border-radius: 10px;
+        padding: 0.5em;
+    }
+
+    #logo{
+        grid-area: logo;
+        align-self: center;
+        justify-self: center;
+    }
+
+    #menu-bar{
+        grid-area: menu-bar;
+    }
+
+    ul{
+        justify-self: center;
+        overflow:visible;
+        background-color: #FFFFFF;
+    }
+
+    li a{
+        display: flex;
+        align-items: center;
+        color: #0000FF;
+        font-size: 20px;
+        text-decoration: underline;
+        padding-right: 54px;
+        padding-left: 54px;
+        border-right: 4px solid #333;
+    }
+
+    li:last-child a{
+        border-right: none;
+    }
+
+    #campus{
+        grid-area: campus;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #campus > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #campus > img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    #campus > p{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #facts{
+        grid-area: facts;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #facts > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0.2em;
+    }
+
+    #facts > p{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #news{
+        grid-area: news;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #news > h1{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        text-align: center;
+    }
+
+    #news > h2{
+        margin-block-start: 0.3em;
+        margin-block-end: 0em;
+    }
+
+    #news > p{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+}
+
+/* Media query for desktop: */
+@media only screen and (min-width: 1440px) {
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 0.8fr 0.9fr 0.3fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr;
+        grid-template-areas: 
+            "header header logo"
+            "menu-bar menu-bar news"
+            "campus facts news"
+        ;
+        grid-column-gap: 2rem;
+        grid-row-gap: 1rem;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    #header{
+        grid-area: header;
+        border:#333 1px solid;
+        border-radius: 10px;
+        padding: 0.5em;
+    }
+
+    #logo{
+        grid-area: logo;
+        align-self: center;
+        justify-self: center;
+    }
+
+    #menu-bar{
+        grid-area: menu-bar;
+    }
+
+    ul{
+        justify-self: center;
+        overflow:visible;
+        background-color: #FFFFFF;
+    }
+
+    li a{
+        display: flex;
+        align-items: center;
+        color: #0000FF;
+        font-size: 24px;
+        text-decoration: underline;
+        padding-right: 65px;
+        padding-left: 65px;
+        border-right: 4px solid #333;
+    }
+
+    li:last-child a{
+        border-right: none;
+    }
+
+    #campus{
+        grid-area: campus;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #campus > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #campus > img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    #campus > p{
+        font-size: 24px;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #facts{
+        grid-area: facts;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #facts > h1{
+        text-align: center;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #facts > p{
+        font-size: 24px;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    #news{
+        grid-area: news;
+        border:#333 1px solid;
+        padding: 0.2em;
+    }
+
+    #news > h1{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        text-align: center;
+    }
+
+    #news > h2{
+        margin-block-start: 0.5em;
+        margin-block-end: 0em;
+    }
+
+    #news > p{
+        font-size: 24px;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+}
